@@ -1,14 +1,3 @@
-variable "region" {
-  description = "AWS Region"
-  type        = string
-  default     = "us-east-1"
-}
-
-variable "name" {
-  description = "Base name for the resources"
-  type        = string
-}
-
 variable "environment" {
   description = "Type of environment"
   type        = string
@@ -23,6 +12,15 @@ variable "network_cidr" {
 variable "n_subnets" {
   description = "Numbers of subnet to be create"
   type        = number
+  validation {
+    error_message = "The number of subnets must be greater than or equal to 2 and less than or equal to 6."
+    condition = min(var.n_subnets)>=2 && max(var.n_subnets)<=6
+  }
+}
+
+variable "name" {
+  description = "Resource name"
+  type        = string
 }
 
 variable "tags" {
