@@ -12,14 +12,13 @@ module "vpc" {
   name         = var.name
   network_cidr = var.network_cidr
   n_subnets    = var.n_subnets
-
-  # azs             = slice(data.aws_availability_zones.available.names, 0, var.n_subnets)
-  # private_subnets = [for k, v in local.azs : cidrsubnet(local.vpc_cidr, 4, k)
-  # public_subnets = [for k, v in local.azs : cidrsubnet(local.vpc_cidr, 4, k)]
-
-  tags = var.tags
+  tags         = var.tags
 }
 
-locals {
-  public_subnets = "teste"
+module "instances" {
+  source = "./modules/instances"
+
+  name              = var.name
+  vpc_id            = module.vpc.Vpc_ID
+  bastion_subnet_id = module.vpc.Public_Subnets_ID[0]
 }
