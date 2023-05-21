@@ -33,5 +33,7 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# IDE
+# Others files
 .vscode
+**/*.pem
+
