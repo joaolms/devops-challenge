@@ -18,6 +18,10 @@ output "Private_Subnets_ID" {
   value = module.vpc.Private_Subnets_ID
 }
 
+output "Bastion_Public_IP" {
+  value = module.instances.Bastion_Public_IP
+}
+
 # output "SSH_Private_Key" {
 #   value = module.instances.ssh_private_key.private_key_pem
 #   sensitive = true

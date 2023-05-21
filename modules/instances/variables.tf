@@ -5,7 +5,7 @@ variable "name" {
 
 variable "ssh_key_name" {
   type    = string
-  default = "ssh-key-pair-test"
+  default = "ssh-key-pair"
 }
 
 variable "vpc_id" {
@@ -13,6 +13,11 @@ variable "vpc_id" {
 }
 
 variable "bastion_subnet_id" {
+  description = "Public Subnet ID to deploy the Bastion host"
+  type        = string
+}
+
+variable "private_subnet_id" {
   description = "Public Subnet ID to deploy the Bastion host"
   type        = string
 }
