@@ -1,7 +1,7 @@
 golden-image:
-	packer init ./modules/golden_image/webserver.pkr.hcl
-	packer validate ./modules/golden_image/webserver.pkr.hcl
-	packer build ./modules/golden_image/webserver.pkr.hcl
+	packer init modules/golden_image/
+	packer validate -var-file variables.pkrvars.hcl modules/golden_image/
+	packer build -var-file variables.pkrvars.hcl modules/golden_image/
 
 check:
 	terraform init

@@ -25,3 +25,7 @@ output "Usernames" {
 output "SSH_key_content" {
   value = module.instances.SSH_key_content
 }
+
+output "Manifest" {
+  value = module.golden_image.Manifest
+}

@@ -36,4 +36,4 @@ terraform.rc
 # Others files
 .vscode
 **/*.pem
-
+**/*.pkrvars.hcl

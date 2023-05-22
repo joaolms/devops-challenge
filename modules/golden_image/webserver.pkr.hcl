@@ -8,9 +8,9 @@ packer {
 }
 
 source "amazon-ebs" "amazon" {
-  ami_name      = "galp-webserver-v{{timestamp}}"
+  ami_name      = "${var.name}-webserver-v{{timestamp}}"
   instance_type = "t2.micro"
-  region        = "us-east-1"
+  region        = var.aws_region
   source_ami_filter {
     filters = {
       name                = "amzn2-ami-hvm-*"
@@ -36,5 +36,9 @@ build {
       "echo Hello World at $(date +%F) | sudo tee /var/www/html/index.html",
       "sudo systemctl start httpd",
     ]
+  }
+  post-processor "manifest" {
+    output = "${path.cwd}/packer-manifest.json"
+    strip_path = true
   }
 }

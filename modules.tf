@@ -7,6 +7,12 @@ module "vpc" {
   tags         = var.tags
 }
 
+module "golden_image" {
+  source = "./modules/golden_image"
+
+  manifest_path = var.manifest_path
+}
+
 module "instances" {
   source = "./modules/instances"
 
@@ -17,5 +23,5 @@ module "instances" {
   public_subnet_ids  = module.vpc.Public_Subnets_ID
   tags               = var.tags
 
-  depends_on = [ module.vpc ]
+  depends_on = [ module.vpc, module.golden_image ]
 }

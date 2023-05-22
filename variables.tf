@@ -30,3 +30,5 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "manifest_path" {}
