@@ -27,9 +27,9 @@ resource "aws_instance" "bastion" {
     ]
   }
 
-  tags = {
+  tags = merge(var.tags, {
     Name = "${var.name}-bastion-host"
-  }
+  })
 
   depends_on = [ local_sensitive_file.pem_file ]
 }

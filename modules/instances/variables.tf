@@ -47,3 +47,9 @@ variable "alb_sg_rules" {
     }
   }
 }
+
+variable "tags" {
+  description = "AWS Resources tags"
+  type = map(string)
+  default = {}
+}

@@ -32,7 +32,7 @@ resource "aws_instance" "web" {
     cpu_credits = "unlimited"
   }
 
-  tags = {
+  tags = merge(var.tags, {
     Name = "${var.name}-web-${count.index}"
-  }
+  })
 }

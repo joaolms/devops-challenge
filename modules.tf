@@ -1,11 +1,3 @@
-# data "aws_availability_zones" "available" {
-#   state = "available"
-# }
-
-# locals {
-#   azs = slice(data.aws_availability_zones.available.names, 0, floor(var.n_subnets / 2))
-# }
-
 module "vpc" {
   source = "./modules/network"
 
@@ -23,6 +15,7 @@ module "instances" {
   bastion_subnet_id  = module.vpc.Public_Subnets_ID[0]
   private_subnet_ids = module.vpc.Private_Subnets_ID
   public_subnet_ids  = module.vpc.Public_Subnets_ID
-  
+  tags               = var.tags
+
   depends_on = [ module.vpc ]
 }

@@ -1,9 +1,3 @@
-variable "environment" {
-  description = "Type of environment"
-  type        = string
-  default     = "demo"
-}
-
 variable "network_cidr" {
   description = "CIDR network"
   type        = string

@@ -9,6 +9,7 @@ resource "aws_key_pair" "main" {
   lifecycle {
     create_before_destroy = true
   }
+  tags = merge(var.tags, {})
 }
 
 resource "local_sensitive_file" "pem_file" {

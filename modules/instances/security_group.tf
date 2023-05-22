@@ -44,9 +44,9 @@ resource "aws_security_group" "bastion" {
     create_before_destroy = true
   }
 
-  tags = {
+  tags = merge(var.tags, {
     Name = "${var.name}-sg-bastion"
-  }
+  })
 }
 
 resource "aws_security_group" "web" {
@@ -93,9 +93,9 @@ resource "aws_security_group" "web" {
     create_before_destroy = true
   }
 
-  tags = {
+  tags = merge(var.tags, {
     Name = "${var.name}-sg-web"
-  }
+  })
 }
 
 resource "aws_security_group" "alb" {
@@ -126,7 +126,7 @@ resource "aws_security_group" "alb" {
     create_before_destroy = true
   }
 
-  tags = {
+  tags = merge(var.tags, {
     Name = "${var.name}-sg-alb"
-  }
+  })
 }

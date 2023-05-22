@@ -6,10 +6,9 @@ golden-image:
 check:
 	terraform init
 	terraform validate
-	terraform plan
 
-apply: golden-image
-	terraform apply
+apply: check
+	terraform apply -auto-approve
 
 destroy:
-	terraform destroy
+	terraform destroy -auto-approve

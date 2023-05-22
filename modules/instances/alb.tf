@@ -5,9 +5,9 @@ resource "aws_lb" "this" {
   security_groups    = [aws_security_group.alb.id]
   subnets            = var.public_subnet_ids
 
-  tags = {
+  tags = merge(var.tags, {
     Name = "${var.name}-alb"
-  }
+  })
 }
 
 resource "aws_lb_target_group" "this" {
@@ -28,9 +28,9 @@ resource "aws_lb_target_group" "this" {
     unhealthy_threshold = 2
   }
   
-  tags = {
+  tags = merge(var.tags, {
     Name = "${var.name}-alb-target-group"
-  }
+  })
 }
 
 resource "aws_lb_listener" "http" {
@@ -45,9 +45,9 @@ resource "aws_lb_listener" "http" {
 }
 
 resource "aws_lb_target_group_attachment" "this" {
-  for_each = toset(aws_instance.web[*].id)
+  count = length(aws_instance.web[*].id)
 
   target_group_arn = aws_lb_target_group.this.arn
-  target_id        = each.value
+  target_id        = aws_instance.web[count.index].id
   port             = 80
 }
