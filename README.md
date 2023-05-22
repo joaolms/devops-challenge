@@ -27,11 +27,13 @@ Create the variables.pkrvars.hcl file based on the variables.pkrvars.hcl.example
 <BR>
 
 ## Golden Image
-To create a golden image, use the Makefile command:
+To create a golden image, use the Makefile command, but a new golden image will be created on the **first** ```make apply``` was executed.
 
 ```sh
 make golden-image
 ```
+
+But a new golden image will be created on the **first** ```make apply``` was executed.
 
 ## Infrastructure
 To deploy the infrastructure use the Makefile command
