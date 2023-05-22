@@ -36,6 +36,14 @@ make golden-image
 ## Infrastructure
 To deploy the infrastructure use the Makefile command
 
+If you want to run ```terraform plan```, first is necessary initialize the terraform, however you are able to execute "apply" without "plan"
+
+- Initialize to plan
+```
+make check
+terraform plan
+```
+- Run apply
 ```sh
 make apply
 ```
