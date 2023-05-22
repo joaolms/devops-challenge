@@ -14,3 +14,7 @@ output "Bastion_Host_IP" {
 output "Web_Hosts_IP" {
   value = aws_instance.web[*].private_ip
 }
+
+output "Alb_Dns_Name" {
+  value = aws_lb.this.dns_name
+}
