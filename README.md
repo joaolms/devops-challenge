@@ -2,7 +2,6 @@
 
 ## Input variables for terraform
 
-
 Create the terraform.tfvars file based on the terraform.tfvars.example
 
 |Variable|Type|Default|Required|Description|
@@ -15,7 +14,7 @@ Create the terraform.tfvars file based on the terraform.tfvars.example
 
 <BR>
 
-## Input variable for Hashicorp Packer
+## Input variables for Hashicorp Packer
 
 Create the variables.pkrvars.hcl file based on the variables.pkrvars.hcl.example
 
@@ -34,7 +33,7 @@ make golden-image
 ```
 
 ## Infrastructure
-To deploy the infrastructure se the Makefile command
+To deploy the infrastructure use the Makefile command
 
 ```sh
 make apply
