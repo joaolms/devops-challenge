@@ -1,4 +1,4 @@
-# NTTDATA Challenge
+# DevOps Challenge
 
 ## Input variables for terraform
 
