@@ -1,0 +1,8 @@
+network_cidr = "172.16.0.0/16"
+n_subnets    = 6
+name         = "galp"
+manifest_path = "."
+tags = {
+  "iac" = "true"
+  "environment" = "demo"
+}
