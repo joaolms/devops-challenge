@@ -1,3 +1,3 @@
 output "Manifest" {
-  value = data.local_file.packer_manifest
+  value = data.local_file.packer_manifest.content
 }

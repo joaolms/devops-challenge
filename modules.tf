@@ -11,6 +11,7 @@ module "golden_image" {
   source = "./modules/golden_image"
 
   manifest_path = var.manifest_path
+  vpc_id        = module.vpc.Vpc_ID
 }
 
 module "instances" {

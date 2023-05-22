@@ -2,12 +2,12 @@ output "Network" {
   value = module.vpc.Network
 }
 
-output "Load_blanacer_HTTP_Content" {
-  value = module.instances.Load_blanacer_HTTP_Content
+output "Load_balancer_HTTP_DNS" {
+  value = module.instances.Load_balancer_HTTP_DNS
 }
 
-output "Bastion_Host_IP" {
-  value = module.instances.Bastion_Host_IP
+output "Bastion_Host_IP_address" {
+  value = module.instances.Bastion_Host_IP_address
 }
 
 output "Private_Instances_IP_addresses" {
