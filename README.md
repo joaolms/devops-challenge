@@ -11,6 +11,7 @@ Create the terraform.tfvars file based on the terraform.tfvars.example
 |n_subnets|number||yes|Max number of subnets|
 |name|string||yes|Name to use on the resources|
 |tags|map(string)|{}|no|AWS Resources tags for all resources|
+|aws_region|string|us-east-1|no|AWS Region|
 
 <BR>
 
@@ -21,7 +22,7 @@ Create the variables.pkrvars.hcl file based on the variables.pkrvars.hcl.example
 |Variable|Type|Default|Required|Description|
 |--------|-----|------|--------|-----------|
 |name|string||yes|Name to use on the resources|
-|aws_region||string|us-east-1|no|AWS Region|
+|aws_region|string|us-east-1|no|AWS Region|
 
 <BR>
 
