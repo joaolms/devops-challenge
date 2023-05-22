@@ -1,9 +1,8 @@
 # NTTDATA Challenge
 
-## ✨ [Demo](/)
+## Input variables for terraform
 
-### Input variables for terraform
-<BR>
+
 Create the terraform.tfvars file based on the terraform.tfvars.example
 
 |Variable|Type|Default|Required|Description|
@@ -13,9 +12,10 @@ Create the terraform.tfvars file based on the terraform.tfvars.example
 |n_subnets|number||yes|Max number of subnets|
 |name|string||yes|Name to use on the resources|
 |tags|map(string)|{}|no|AWS Resources tags for all resources|
+
 <BR>
 
-### Input variable for Hashicorp Packer
+## Input variable for Hashicorp Packer
 
 Create the variables.pkrvars.hcl file based on the variables.pkrvars.hcl.example
 
@@ -25,6 +25,7 @@ Create the variables.pkrvars.hcl file based on the variables.pkrvars.hcl.example
 |aws_region||string|us-east-1|no|AWS Region|
 
 <BR>
+
 ## Golden Image
 To create a golden image, use the Makefile command:
 
@@ -38,3 +39,5 @@ To deploy the infrastructure se the Makefile command
 ```sh
 make apply
 ```
+
+![Infrastructure Diagram](./img/infrastructure.jpg)
