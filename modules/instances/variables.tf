@@ -17,9 +17,14 @@ variable "bastion_subnet_id" {
   type        = string
 }
 
-variable "private_subnet_id" {
-  description = "Public Subnet ID to deploy the Bastion host"
-  type        = string
+variable "private_subnet_ids" {
+  description = "Private Subnet ID to deploy the Bastion host"
+  type        = list(string)
+}
+
+variable "public_subnet_ids" {
+  description = "Public Subnet ID to deploy ALB"
+  type        = list(string)
 }
 
 variable "bastion_sg_rules" {
@@ -28,6 +33,11 @@ variable "bastion_sg_rules" {
 }
 
 variable "web_sg_rules" {
+  type = map(any)
+  default = {}
+}
+
+variable "alb_sg_rules" {
   type = map(any)
   default = {
     80 = {

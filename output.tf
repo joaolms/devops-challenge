@@ -18,8 +18,8 @@ output "Private_Subnets_ID" {
   value = module.vpc.Private_Subnets_ID
 }
 
-output "Bastion_Public_IP" {
-  value = module.instances.Bastion_Public_IP
+output "Bastion_Host_IP" {
+  value = module.instances.Bastion_Host_IP
 }
 
 # output "SSH_Private_Key" {
@@ -30,3 +30,7 @@ output "Bastion_Public_IP" {
 # output "Key_Pair" {
 #   value = module.instances.key_pair
 # }
+
+output "Web_Hosts_IP" {
+  value = module.instances.Web_Hosts_IP
+}
