@@ -33,7 +33,7 @@ To create a golden image, use the Makefile command, but a new golden image will 
 make golden-image
 ```
 
-But a new golden image will be created on the **first** ```make apply``` was executed.
+But a new golden image will be created on the **first** ```make apply``` is executed.
 
 ## Infrastructure
 To deploy the infrastructure use the Makefile command
